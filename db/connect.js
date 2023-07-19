@@ -6,7 +6,7 @@ const connectDB = (url) => {
     useCreateIndex: true,
     useFindAndModify: false,
     useUnifiedTopology: true,
-  })
+  }, (error) => error ? console.log(error) : console.log("db connected"))
 }
 
 module.exports = connectDB
